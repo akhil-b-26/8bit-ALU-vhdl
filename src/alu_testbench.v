@@ -9,7 +9,7 @@ wire [15:0] OutALU;
 wire COut;
 
 // Instantiate ALU
-alu uut (
+ALU_8bit uut (
     .OpCode(OpCode),
     .InputA(InputA),
     .InputB(InputB),
