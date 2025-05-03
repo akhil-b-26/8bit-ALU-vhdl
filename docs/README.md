@@ -39,10 +39,11 @@ The ALU supports the following operations:
  │   ├── alu_8bit.v        # ALU Verilog Module
  │   ├── alu_testbench.v   # Testbench for Verification
  ├── docs
+ │   ├── LICENSE.txt
  │   ├── README.md         # Project Documentation
  │   ├── alu_block_diagram.png
  ├── simulations
- │   ├── waveforms.vcd     # Simulation results
+ │   ├── alu_waveform.png     # Simulation results
 ```
 
 ## 🏗 How to Run the Simulation
