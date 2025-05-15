@@ -1,4 +1,4 @@
-# 8-bit ALU Design
+# 8-bit ALU Design in Verilog
 
 ## 📌 Project Overview
 This repository contains the Verilog implementation of an **8-bit Arithmetic Logic Unit (ALU)**. The ALU is a fundamental component in digital circuits and processors, capable of performing various arithmetic and logical operations based on a 3-bit opcode.
