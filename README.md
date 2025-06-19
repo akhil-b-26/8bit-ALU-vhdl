@@ -53,7 +53,7 @@ The ALU supports the following operations:
    cd 8-bit-ALU-vhdl
    ```
 2. **Open ModelSim/Xilinx Vivado/Quartus**  
-3. **Compile the Verilog files**  
+3. **Compile the VHDL files**  
 4. **Run the testbench simulation**  
 5. **Verify the outputs in the waveform viewer**  
 
