@@ -28,16 +28,16 @@ The ALU supports the following operations:
   - `COut` → Carry-out (for arithmetic operations)  
 
 ## 🛠 Implementation Details
-- **Written in Verilog**
+- **Written in VHDL**
 - **Testbench included** for simulation and verification
 - Synthesizable with **Xilinx Vivado / ModelSim / Quartus**
 
 ## 📂 Project Structure
 ```
-📦 8-bit-ALU
+📦 8-bit-ALU-vhdl
  ├── src
- │   ├── alu_8bit.v        # ALU Verilog Module
- │   ├── alu_testbench.v   # Testbench for Verification
+ │   ├── alu_8bit.vhdl        # ALU Verilog Module
+ │   ├── alu_testbench.vhdl   # Testbench for Verification
  ├── docs
  │   ├── alu_block_diagram.png
  ├── simulations
@@ -49,8 +49,8 @@ The ALU supports the following operations:
 ## 🏗 How to Run the Simulation
 1. **Clone the repository**  
    ```sh
-   git clone https://github.com/yourusername/8-bit-ALU.git
-   cd 8-bit-ALU
+   git clone https://github.com/akhil-b-26/8-bit-ALU-vhdl.git
+   cd 8-bit-ALU-vhdl
    ```
 2. **Open ModelSim/Xilinx Vivado/Quartus**  
 3. **Compile the Verilog files**  
@@ -69,4 +69,4 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 Contributions are welcome! If you find a bug or want to enhance the functionality, feel free to fork the repository and submit a pull request.
 
 ## 📧 Contact
-For any inquiries or discussions, feel free to reach out via GitHub Issues**.
+For any inquiries or discussions, feel free to reach out via **GitHub Issues**.
