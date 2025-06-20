@@ -15,7 +15,7 @@ architecture Behavioral of tb_ALU_8bit is
 
 begin
 
-    -- Instantiate ALU Unit Under Test (UUT)
+    -- Instantiate the ALU Unit Under Test (UUT)
     uut: entity work.ALU_8bit
         port map (
             InputA => InputA,
@@ -34,36 +34,26 @@ begin
         InputA <= std_logic_vector(to_unsigned(45, 8));
         InputB <= std_logic_vector(to_unsigned(38, 8));
 
-        -- Addition
-        OpCode <= "000"; wait for 10 ns;
-
-        -- Subtraction
-        OpCode <= "001"; wait for 10 ns;
-
-        -- OR
-        OpCode <= "110"; wait for 10 ns;
-
-        -- XOR
-        OpCode <= "111"; wait for 10 ns;
+        OpCode <= "000"; wait for 10 ns;  -- ADD
+        OpCode <= "001"; wait for 10 ns;  -- SUB
+        OpCode <= "110"; wait for 10 ns;  -- OR
+        OpCode <= "111"; wait for 10 ns;  -- XOR
 
         -- Test Case 2: A = 49, B = 10
         InputA <= std_logic_vector(to_unsigned(49, 8));
         InputB <= std_logic_vector(to_unsigned(10, 8));
 
-        -- Multiplication
-        OpCode <= "010"; wait for 10 ns;
+        OpCode <= "010"; wait for 10 ns;  -- MUL
+        OpCode <= "011"; wait for 10 ns;  -- SHL
+        OpCode <= "100"; wait for 10 ns;  -- SHR
+        OpCode <= "101"; wait for 10 ns;  -- AND
 
-        -- Left Shift
-        OpCode <= "011"; wait for 10 ns;
-
-        -- Right Shift
-        OpCode <= "100"; wait for 10 ns;
-
-        -- AND
-        OpCode <= "101"; wait for 10 ns;
+        -- Edge Case: A = 255, B = 1 (check carry)
+        InputA <= std_logic_vector(to_unsigned(255, 8));
+        InputB <= std_logic_vector(to_unsigned(1, 8));
+        OpCode <= "000"; wait for 10 ns;  -- ADD with carry
 
         report "ALU Testbench complete." severity note;
-
         wait;
     end process;
 
