@@ -20,34 +20,34 @@ begin
     begin
         A := unsigned(InputA);
         B := unsigned(InputB);
-        result := (others => '0');
+        result <= (others => '0');
         COut <= '0';
 
         case OpCode is
             when "000" =>  -- Addition
-                result := ("00000000" & A) + ("00000000" & B);
-                if result > 255 then
+                result <= resize(A, 16) + resize(B, 16);
+                if (resize(A, 16) + resize(B, 16)) > 255 then
                     COut <= '1';
                 end if;
             when "001" =>  -- Subtraction
-                result := ("00000000" & A) - ("00000000" & B);
+                result <= resize(A, 16) - resize(B, 16);
                 if A < B then
                     COut <= '1';
                 end if;
             when "010" =>  -- Multiplication
-                result := ("00000000" & A) * ("00000000" & B);
+                result <= resize(A, 16) * resize(B, 16);
             when "011" =>  -- Left Shift A
-                result := ("00000000" & A) sll 1;
+                result <= resize(A, 16) sll 1;
             when "100" =>  -- Right Shift A
-                result := ("00000000" & A) srl 1;
+                result <= resize(A, 16) srl 1;
             when "101" =>  -- AND
-                result := ("00000000" & (A and B));
+                result <= resize((A and B), 16);
             when "110" =>  -- OR
-                result := ("00000000" & (A or B));
+                result <= resize((A or B), 16);
             when "111" =>  -- XOR
-                result := ("00000000" & (A xor B));
+                result <= resize((A xor B), 16);
             when others =>
-                result := (others => '0');
+                result <= (others => '0');
         end case;
 
         OutALU <= std_logic_vector(result);
